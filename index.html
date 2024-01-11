@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About this App</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">User Guide</a></li>
+                  
+                </ul>
+              </li>
+              
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" id="sub" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="city_name"></span></h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                 <h4 class="my-0 fw-normal">Temprature</th>
+
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><small class="text-body-secondary fw-light"></small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temp  <span id="temp"></span></li>
+                  <li>Min Temp  <span id="min_temp"></span></li>
+                  <li>Max Temp  <span id="max_temp"></span></li>
+                
+                  
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Sun </h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li> sunrise <span id="sunrise"></span></li>
+                    <li>sunset <span id="sunset"></span></li>
+                    <li>  wind_degrees <span id="wind_degrees"></span></li>
+                    <li>   wind_speed <span id="wind_speed"></span></li>
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Cloud</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>cloud_pct <span id="cloud_pct"></span></li>
+                  <li>feels_like <span id="feels_like"></span></li>
+                  <li>humidity <span id="humidity"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th></th>
+                <th style="width: 15%;">cloud_pct </th>
+                <th style="width: 15%;">feels_like</th>
+                <th style="width: 15%;">humidity</th>
+                <th style="width: 15%;">max_temp</th>
+                <th style="width: 15%;">min_temp</th>
+                <th style="width: 15%;">sunrise</th>
+                <th style="width: 15%;">sunset</th>
+                <th style="width: 15%;">temp</th>
+                <th style="width: 15%;">wind_degrees</th>
+                <th style="width: 15%;">wind_speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">ujjain</th>
+                <td id="cloud_pct1"></td>
+                <td id="feels_like1"></td>
+                <td id="humidity1"></td>
+                <td id="max_temp1"></td>
+                <td id="min_temp1"></td>
+                <td id="sunrise1"></td>
+                <td id="sunset1"></td>
+                <td id="temp1"></td>
+                <td id="wind_degrees1"></td>
+                <td id="wind_speed1"></td>
+                
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Gwalior</th>
+               
+                <td id="cloud_pct2"></td>
+                <td id="feels_like2"></td>
+                <td id="humidity2"></td>
+                <td id="max_temp2"></td>
+                <td id="min_temp2"></td>
+                <td id="sunrise2"></td>
+                <td id="sunset2"></td>
+                <td id="temp2"></td>
+                <td id="wind_degrees2"></td>
+                <td id="wind_speed2"></td>
+              </tr>
+            </tbody>
+    
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Lucknow</th>
+                <td id="cloud_pct3"></td>
+                <td id="feels_like3"></td>
+                <td id="humidity3"></td>
+                <td id="max_temp3"></td>
+                <td id="min_temp3"></td>
+                <td id="sunrise3"></td>
+                <td id="sunset3"></td>
+                <td id="temp3"></td>
+                <td id="wind_degrees3"></td>
+                <td id="wind_speed3"></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Kolkata</th>
+                <td id="cloud_pct4"></td>
+                <td id="feels_like4"></td>
+                <td id="humidity4"></td>
+                <td id="max_temp4"></td>
+                <td id="min_temp4"></td>
+                <td id="sunrise4"></td>
+                <td id="sunset4"></td>
+                <td id="temp4"></td>
+                <td id="wind_degrees4"></td>
+                <td id="wind_speed4"></td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const getWeather=(city)=>{
+
+            document.getElementById('city_name').innerHTML=city;
+        const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '43c599b999mshfa38461cd37d2e2p17109ejsnc8d30c24b71f',
+                'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+        console.log(city)
+       fetch(url,options).then(response=>response.json())
+       .then((response)=>{console.log(response)
+        cloud_pct.innerHTML=response.cloud_pct 
+        feels_like.innerHTML=response.feels_like
+        humidity.innerHTML=response.humidity
+        max_temp.innerHTML=response.max_temp
+        min_temp.innerHTML=response.min_temp
+        sunrise.innerHTML=response.sunrise
+        sunset.innerHTML=response.sunset
+        temp.innerHTML=response.temp
+        wind_degrees.innerHTML=response.wind_degrees
+        wind_speed.innerHTML=response.wind_speed
+       
+       })
+       .catch(e=>console.error(e))
+    }
+    
+
+const submitButton = document.getElementById('submit');
+    if (submitButton) {
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            getWeather(document.getElementById('sub').value);
+        });
+    }
+    
+    getWeather('Kolkata'); // You may choose to call getWeather here or as needed.
+});
+
+const url1 = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+'ujjain';
+        const options1 = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '43c599b999mshfa38461cd37d2e2p17109ejsnc8d30c24b71f',
+                'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+        console.log('ujjain')
+       fetch(url1,options1).then(response=>response.json())
+       .then((response)=>{console.log(response)
+        cloud_pct1.innerHTML=response.cloud_pct 
+        feels_like1.innerHTML=response.feels_like
+        humidity1.innerHTML=response.humidity
+        max_temp1.innerHTML=response.max_temp
+        min_temp1.innerHTML=response.min_temp
+        sunrise1.innerHTML=response.sunrise
+        sunset1.innerHTML=response.sunset
+        temp1.innerHTML=response.temp
+        wind_degrees1.innerHTML=response.wind_degrees
+        wind_speed1.innerHTML=response.wind_speed
+       
+       })
+       .catch(e=>console.error(e))
+    
+const url2 = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+'Gwalior';
+        const options2 = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '43c599b999mshfa38461cd37d2e2p17109ejsnc8d30c24b71f',
+                'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+        console.log('Gwalior')
+       fetch(url2,options2).then(response=>response.json())
+       .then((response)=>{console.log(response)
+        cloud_pct2.innerHTML=response.cloud_pct 
+        feels_like2.innerHTML=response.feels_like
+        humidity2.innerHTML=response.humidity
+        max_temp2.innerHTML=response.max_temp
+        min_temp2.innerHTML=response.min_temp
+        sunrise2.innerHTML=response.sunrise
+        sunset2.innerHTML=response.sunset
+        temp2.innerHTML=response.temp
+        wind_degrees2.innerHTML=response.wind_degrees
+        wind_speed2.innerHTML=response.wind_speed
+       
+       })
+       .catch(e=>console.error(e))
+    
+const url3 = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+'lucknow';
+        const options3 = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '43c599b999mshfa38461cd37d2e2p17109ejsnc8d30c24b71f',
+                'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+        console.log('lucknow')
+       fetch(url3,options3).then(response=>response.json())
+       .then((response)=>{console.log(response)
+        cloud_pct3.innerHTML=response.cloud_pct 
+        feels_like3.innerHTML=response.feels_like
+        humidity3.innerHTML=response.humidity
+        max_temp3.innerHTML=response.max_temp
+        min_temp3.innerHTML=response.min_temp
+        sunrise3.innerHTML=response.sunrise
+        sunset3.innerHTML=response.sunset
+        temp3.innerHTML=response.temp
+        wind_degrees3.innerHTML=response.wind_degrees
+        wind_speed3.innerHTML=response.wind_speed
+       
+       })
+       .catch(e=>console.error(e))
+    
+const url4 = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+'kolkata';
+        const options4 = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '43c599b999mshfa38461cd37d2e2p17109ejsnc8d30c24b71f',
+                'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+            }
+        };
+        console.log('kolkata')
+       fetch(url4,options4).then(response=>response.json())
+       .then((response)=>{console.log(response)
+        cloud_pct4.innerHTML=response.cloud_pct 
+        feels_like4.innerHTML=response.feels_like
+        humidity4.innerHTML=response.humidity
+        max_temp4.innerHTML=response.max_temp
+        min_temp4.innerHTML=response.min_temp
+        sunrise4.innerHTML=response.sunrise
+        sunset4.innerHTML=response.sunset
+        temp4.innerHTML=response.temp
+        wind_degrees4.innerHTML=response.wind_degrees
+        wind_speed4.innerHTML=response.wind_speed
+       
+       })
+       .catch(e=>console.error(e))
+    
+    </script>
+</body>
+</html> 
